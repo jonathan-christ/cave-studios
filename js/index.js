@@ -1,6 +1,5 @@
 let carouselItems = document.querySelectorAll('[data-carousel-item]');
-updateActiveState(0)
-updateDescription()
+init()
 
 function idxToDesc(idx) {
     let title, desc
@@ -31,7 +30,6 @@ function idxToDesc(idx) {
 }
 
 function updateActiveState(index) {
-    let carouselItems = document.querySelectorAll('[data-carousel-item]');
     carouselItems.forEach((item, i) => {
         if (i === index) {
             item.setAttribute('data-carousel-item', 'active');
@@ -42,21 +40,19 @@ function updateActiveState(index) {
 }
 
 function updateDescription() {
-    let cont = document.getElementById('gallery-desc').children
-    let items = document.querySelectorAll('[data-carousel-item]')
-    let active
+    // let cont = document.getElementById('gallery-desc').children
+    // let items = document.querySelectorAll('[data-carousel-item]')
+    // let active
 
-    items.forEach((item, idx) => {
-        if (item.getAttribute('data-carousel-item') === 'active') {
-            active = idx;
-        }
-    })
+    // items.forEach((item, idx) => {
+    //     if (item.getAttribute('data-carousel-item') === 'active') {
+    //         active = idx;
+    //     }
+    // })
+    // let data = idxToDesc(active)
 
-    console.log("bruh " + active)
-    let data = idxToDesc(active)
-
-    cont["title"].innerHTML = data[0]
-    cont["desc"].innerHTML = data[1]
+    // cont["title"].innerHTML = data[0]
+    // cont["desc"].innerHTML = data[1]
 }
 
 document.querySelectorAll('[data-carousel-slide-to]').forEach((button, index) => {
@@ -79,4 +75,48 @@ document.querySelector('[data-carousel-next]').addEventListener('click', () => {
     updateActiveState(nextIndex);
     updateDescription();
 });
+
+// function parallax() {
+//     let body = document.querySelector("#body")
+//     body.addEventListener('scroll', function () {
+//         var scrollPosition = body.scrollTop
+//         let bg = document.querySelector("#bg")
+//         bg.style.transform = 'translateY(' + scrollPosition *0.5 + 'px)';
+//     });
+// }
+
+function navbar() {
+    body.addEventListener('scroll', function () {
+        let navbar = document.querySelector("#navbar");
+        var element = document.querySelector('#blank');
+        var elementPosition = (element.offsetTop + element.offsetHeight);
+        if (body.scrollTop > elementPosition) {
+            navbar.classList.add('bg-appear')
+            navbar.classList.remove('bg-disappear')
+            navbar.querySelector("#logo").classList.remove('invisible')
+        } else {
+            navbar.querySelector("#logo").classList.add('invisible')
+            navbar.classList.remove('bg-appear')
+            navbar.classList.add('bg-disappear')
+        }
+
+        ['#services', '#about', '#contacts'].map((element, idx) => {
+            element = document.querySelector(element)
+            let navEl = Array.from(document.querySelector("#links").children)
+            let elB = (element.offsetTop-200 + element.offsetHeight)
+            if (body.scrollTop >= element.offsetTop-200 && body.scrollTop <= elB && !element.classList.contains('bg-gray-800')) {
+                navEl[idx].classList.add('bg-gray-800')
+            } else {
+                navEl[idx].classList.remove('bg-gray-800')
+            }
+        });
+    });
+}
+
+function init() {
+    updateActiveState(0)
+    updateDescription()
+    // parallax()
+    navbar()
+}
 

@@ -1,0 +1,69 @@
+@keyframes fade-in {
+    0% {
+        background-color: transparent
+    }
+    
+    100% {
+        background-color: black
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        background-color: black
+    }
+    
+    100% {
+        background-color: transparent
+    }
+}
+
+html {
+    color: white;
+}
+
+#blank {
+    font-style: normal;
+    font-size: 10rem;
+    line-height: 10rem;
+}
+
+#body {
+    background-image: url(images/background/1-1.jpg);
+    background-size: cover;
+}
+
+#filler {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    padding-bottom: 16rem;
+}
+
+#lower {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.yeseva-one-regular,
+.section-title,
+#navbar {
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.josefin-sans,
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+}
+
+.bg-appear {
+    animation: fade-in 0.05s ease-in;
+    background-color: black;
+}
+
+.bg-disappear {
+    animation: fade-out 0.05s ease-in;
+    background-color: transparent;
+}
