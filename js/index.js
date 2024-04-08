@@ -89,13 +89,15 @@ function navbar() {
     body.addEventListener('scroll', function () {
         let navbar = document.querySelector("#navbar");
         var element = document.querySelector('#blank');
-        var elementPosition = (element.offsetTop + element.offsetHeight);
+        var elementPosition = (element.offsetTop + 200);
         if (body.scrollTop > elementPosition) {
             navbar.classList.add('bg-appear')
             navbar.classList.remove('bg-disappear')
-            navbar.querySelector("#logo").classList.remove('invisible')
+            navbar.querySelector("#logo").classList.remove('logo-invis')
+            navbar.querySelector("#logo").classList.add('logo-vis')
         } else {
-            navbar.querySelector("#logo").classList.add('invisible')
+            navbar.querySelector("#logo").classList.add('logo-invis')
+            navbar.querySelector("#logo").classList.remove('logo-vis')
             navbar.classList.remove('bg-appear')
             navbar.classList.add('bg-disappear')
         }
