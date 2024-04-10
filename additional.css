@@ -43,7 +43,6 @@ html {
 }
 
 .yeseva-one-regular,
-.section-title,
 #navbar {
     font-family: "Yeseva One", serif;
     font-weight: 400;
@@ -51,6 +50,7 @@ html {
 }
 
 .josefin-sans,
+.section-title,
 * {
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
@@ -78,17 +78,20 @@ html {
 }
 
 #body {
-    background-image: url(images/background/1-1.jpg);
+    background-image: url(images/background/3.jpg);
+    background-attachment: local;
     background-size: cover;
 }
 
 #filler {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    backdrop-filter: blur(1px);
     padding-bottom: 16rem;
 }
 
 #lower {
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 #navbar {
@@ -103,12 +106,12 @@ html {
 }
 
 .bg-disappear {
-    animation: fade-out 0.5s ease-in;
+    animation: fade-out 0.15s ease-in;
     background-color: transparent;
 }
 
 .logo-invis {
-    animation: logo-out 0.5s ease-in;
+    animation: logo-out 0.15s ease-in;
     opacity: 0;
 }
 
@@ -119,4 +122,80 @@ html {
 
 #team-cont h2 {
     font-weight: 500;
+}
+
+.gen-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: filter 1s, transform 1s;
+}
+
+.gen-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+.contact:hover {
+    border: 2px solid white;
+    transition: border 0.5s;
+    cursor: pointer;
+}
+
+.contact:nth-child(2) {
+    transition: filter 1s 200ms, transform 1s 200ms;
+}
+
+.contact:nth-child(3) {
+    transition: filter 1s 300ms, transform 1s 300ms;
+}
+
+.contact:nth-child(4) {
+    transition: filter 1s 400ms, transform 1s 400ms;
+}
+
+.contact:nth-child(5) {
+    transition: filter 1s 500ms, transform 1s 500ms;
+}
+
+.tm-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(25%);
+    transition: filter 1s 300ms, transform 1s 300ms;
+}
+
+.tm-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+
+.member:nth-child(2) {
+    transition: filter 1s 200ms, transform 1s 200ms;
+}
+
+
+.member:nth-child(3) {
+    transition: filter 1s 100ms, transform 1s 100ms;
+}
+
+
+.member:nth-child(4) {
+    transition: filter 1s 200ms, transform 1s 200ms;
+}
+
+
+.member:nth-child(5) {
+    transition: filter 1s 300ms, transform 1s 300ms;
+}
+
+@media(preferes-reduced-motion) {
+    .gen-hidden {
+        transition: none
+    }
 }

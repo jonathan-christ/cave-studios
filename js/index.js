@@ -1,4 +1,8 @@
 let carouselItems = document.querySelectorAll('[data-carousel-item]');
+const animMap = new Map()
+animMap.set('gen-hidden', 'gen-show')
+animMap.set('tm-hidden', 'tm-show')
+
 init()
 
 function idxToDesc(idx) {
@@ -40,18 +44,18 @@ function updateActiveState(index) {
 }
 
 function updateDescription() {
-    // let cont = document.getElementById('gallery-desc').children
-    // let items = document.querySelectorAll('[data-carousel-item]')
-    // let active
+    let cont = document.getElementById('gallery-desc').children
+    let items = document.querySelectorAll('[data-carousel-item]')
+    let active
 
-    // items.forEach((item, idx) => {
-    //     if (item.getAttribute('data-carousel-item') === 'active') {
-    //         active = idx;
-    //     }
-    // })
-    // let data = idxToDesc(active)
+    items.forEach((item, idx) => {
+        if (item.getAttribute('data-carousel-item') === 'active') {
+            active = idx;
+        }
+    })
+    let data = idxToDesc(active)
 
-    // cont["title"].innerHTML = data[0]
+    cont["title"].innerHTML = data[0]
     // cont["desc"].innerHTML = data[1]
 }
 
@@ -105,8 +109,9 @@ function navbar() {
         ['#services', '#about', '#contacts'].map((element, idx) => {
             element = document.querySelector(element)
             let navEl = Array.from(document.querySelector("#links").children)
-            let elB = (element.offsetTop-200 + element.offsetHeight)
-            if (body.scrollTop >= element.offsetTop-200 && body.scrollTop <= elB && !element.classList.contains('bg-gray-800')) {
+            let elB = (element.offsetTop + 700 + element.offsetHeight)
+            if (body.scrollTop >= element.offsetTop + 700 && body.scrollTop <= elB && !element.classList.contains('bg-gray-800')) {
+                console.log(element + " " + idx)
                 navEl[idx].classList.add('bg-gray-800')
             } else {
                 navEl[idx].classList.remove('bg-gray-800')
@@ -115,10 +120,30 @@ function navbar() {
     });
 }
 
+function observe(cname) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add(animMap.get(cname))
+            } else {
+                entry.target.classList.remove(animMap.get(cname))
+            }
+        })
+    })
+
+    const hiddenElements = document.querySelectorAll('.' + cname)
+    hiddenElements.forEach(el => { observer.observe(el) })
+}
+
+
 function init() {
+    observe('gen-hidden')
+    observe('tm-hidden')
+
     updateActiveState(0)
     updateDescription()
     // parallax()
     navbar()
+
 }
 
