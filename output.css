@@ -890,16 +890,12 @@ video {
   gap: 5rem;
 }
 
-.gap-32 {
-  gap: 8rem;
+.gap-24 {
+  gap: 6rem;
 }
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-24 {
-  gap: 6rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
