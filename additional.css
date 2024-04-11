@@ -194,6 +194,36 @@ html {
     transition: filter 1s 300ms, transform 1s 300ms;
 }
 
+.about.tm-hidden{
+    transform: translateY(100%);
+    transition: filter 1s, transform 1s;
+}
+
+.about.tm-show{
+    transform: translateY(0);
+}
+
+.about:nth-child(2) {
+    transition: filter 1s 200ms, transform 1s 200ms;
+}
+
+.about:nth-child(3) {
+    transition: filter 2s 1s, transform 1s 2s;
+}
+
+.about-decor.tm-hidden{
+    opacity:0;
+    transition: opacity 1s 1s, filter 1s 1s;
+}
+
+.about-decor.tm-show{
+    opacity:1;
+}
+
+.about-decor:nth-child(2) {
+    transition: opacity 1s, filter 1s;
+}
+
 @media(preferes-reduced-motion) {
     .gen-hidden {
         transition: none
