@@ -135,6 +135,9 @@ function observe(cname) {
     hiddenElements.forEach(el => { observer.observe(el) })
 }
 
+function notAvail(){
+    alert("Under Construction!");
+}
 
 function init() {
     observe('gen-hidden')
@@ -146,4 +149,5 @@ function init() {
     navbar()
 
 }
+
 
