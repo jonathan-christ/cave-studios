@@ -49,6 +49,10 @@ html {
     font-style: normal;
 }
 
+#navbar, #blank {
+    color:white;
+}
+
 .josefin-sans,
 .section-title,
 * {
@@ -227,5 +231,11 @@ html {
 @media(preferes-reduced-motion) {
     .gen-hidden {
         transition: none
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 768px !important; 
     }
 }

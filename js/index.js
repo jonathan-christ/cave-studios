@@ -1,4 +1,4 @@
-let carouselItems = document.querySelectorAll('[data-carousel-item]');
+// let carouselItems = document.querySelectorAll('[data-carousel-item]');
 const animMap = new Map()
 animMap.set('gen-hidden', 'gen-show')
 animMap.set('tm-hidden', 'tm-show')
@@ -59,26 +59,26 @@ function updateDescription() {
     // cont["desc"].innerHTML = data[1]
 }
 
-document.querySelectorAll('[data-carousel-slide-to]').forEach((button, index) => {
-    button.addEventListener('click', () => {
-        updateActiveState(index);
-        updateDescription();
-    });
-});
+// document.querySelectorAll('[data-carousel-slide-to]').forEach((button, index) => {
+//     button.addEventListener('click', () => {
+//         updateActiveState(index);
+//         updateDescription();
+//     });
+// });
 
-document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
-    let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
-    let prevIndex = activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
-    updateActiveState(prevIndex);
-    updateDescription();
-});
+// document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+//     let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
+//     let prevIndex = activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
+//     updateActiveState(prevIndex);
+//     updateDescription();
+// });
 
-document.querySelector('[data-carousel-next]').addEventListener('click', () => {
-    let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
-    let nextIndex = activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
-    updateActiveState(nextIndex);
-    updateDescription();
-});
+// document.querySelector('[data-carousel-next]').addEventListener('click', () => {
+//     let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
+//     let nextIndex = activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
+//     updateActiveState(nextIndex);
+//     updateDescription();
+// });
 
 // function parallax() {
 //     let body = document.querySelector("#body")
@@ -135,7 +135,7 @@ function observe(cname) {
     hiddenElements.forEach(el => { observer.observe(el) })
 }
 
-function notAvail(){
+function notAvail() {
     alert("Under Construction!");
 }
 
@@ -143,8 +143,8 @@ function init() {
     observe('gen-hidden')
     observe('tm-hidden')
 
-    updateActiveState(0)
-    updateDescription()
+    // updateActiveState(0)
+    // updateDescription()
     // parallax()
     navbar()
 
