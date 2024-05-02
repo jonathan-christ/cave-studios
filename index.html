@@ -48,56 +48,119 @@
         </div>
         <div id="filler" class="bg-gradient-to-t"></div>
         <div id="lower" class="w-full flex flex-col gap-24">
-            <div id="services" class="min-h-screen flex flex-col bg-black">
+            <div id="services" class="min-h-screen flex flex-col bg-black/80">
                 <!-- CLIP IMAGE SAME SIZE FOR ALL -->
                 <!-- PROBABLY CLICK TO ZOOM -->
                 <!-- DO A CAROUSEL -->
-                <div id="carouselExampleCaptions" class="relative" data-twe-carousel-init data-twe-carousel-slide>
+                <div id="gallery" class="relative h-full mt-20 p-16" data-twe-carousel-init data-twe-carousel-slide>
                     <!--Carousel indicators-->
                     <div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
                         data-twe-carousel-indicators>
-                        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="0"
-                            data-twe-carousel-active
+                        <button type="button" data-twe-target="#gallery" data-twe-slide-to="0" data-twe-carousel-active
                             class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
                             aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="1"
+                        <button type="button" data-twe-target="#gallery" data-twe-slide-to="1"
                             class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
                             aria-label="Slide 2"></button>
-                        <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="2"
+                        <button type="button" data-twe-target="#gallery" data-twe-slide-to="2"
                             class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
                             aria-label="Slide 3"></button>
                     </div>
 
                     <!--Carousel items-->
-                    <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                    <div class="relative h-full w-full overflow-hidden after:clear-both after:block after:content-['']">
                         <!--First item-->
-                        <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        <div class="relative float-left -mr-[100%] w-full h-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-twe-carousel-active data-twe-carousel-item style="backface-visibility: hidden">
-                            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg" class="block w-full"
-                                alt="..." />
-                            <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-                                <h5 class="text-xl">First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+                                <div class="-m-1 flex flex-wrap md:-m-2">
+                                    <div class="flex w-1/2 flex-wrap">
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1256.JPG" />
+                                        </div>
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1258.JPG" />
+                                        </div>
+                                        <div class="w-full p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1266.JPG" />
+                                        </div>
+                                    </div>
+                                    <div class="flex w-1/2 flex-wrap">
+                                        <div class="w-full p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1265.JPG" />
+                                        </div>
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1264.JPG" />
+                                        </div>
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/traditional/IMG_1265.JPG" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--Second item-->
-                        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        <div class="relative float-left -mr-[100%] hidden w-full h-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none content-center"
                             data-twe-carousel-item style="backface-visibility: hidden">
-                            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg" class="block w-full"
-                                alt="..." />
-                            <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-                                <h5 class="text-xl">Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
+                            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 my-auto">
+                                <div class="-m-1 flex flex-wrap md:-m-2">
+                                    <div class="flex w-full h-full flex-wrap">
+                                        <div class="w-1/4 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/digital/image15.png" />
+                                        </div>
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <video alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/digital/anim.mp4" controls>
+                                        </div>
+                                        <div class="w-1/4 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/digital/image17.png" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--Third item-->
-                        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        <div class="relative float-left -mr-[100%] hidden w-full content-center transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none h-full"
                             data-twe-carousel-item style="backface-visibility: hidden">
-                            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full"
-                                alt="..." />
-                            <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-                                <h5 class="text-xl">Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
+                            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 my-auto">
+                                <div class="-m-1 flex flex-wrap md:-m-2">
+                                    <div class="flex w-1/2 flex-wrap">
+                                        <div class="w-full p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/graphics/IMG_1263.JPG" />
+                                        </div>
+                                    </div>
+                                    <div class="flex w-1/2 flex-wrap">
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/assets/IMG_1261.JPG" />
+                                        </div>
+                                        <div class="w-1/2 p-1 md:p-2">
+                                            <img alt="gallery"
+                                                class="block h-full w-full rounded-lg object-cover object-center"
+                                                src="images/gallery/posters/IMG_1260.JPG" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,7 +168,7 @@
                     <!--Carousel controls - prev item-->
                     <button
                         class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-                        type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="prev">
+                        type="button" data-twe-target="#gallery" data-twe-slide="prev">
                         <span class="inline-block h-8 w-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="h-6 w-6">
@@ -118,7 +181,7 @@
                     <!--Carousel controls - next item-->
                     <button
                         class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-                        type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="next">
+                        type="button" data-twe-target="#gallery" data-twe-slide="next">
                         <span class="inline-block h-8 w-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="h-6 w-6">

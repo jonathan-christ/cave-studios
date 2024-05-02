@@ -39,7 +39,7 @@
 }
 
 html {
-    color: white;
+    color: white !important;
 }
 
 .yeseva-one-regular,
