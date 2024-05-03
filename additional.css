@@ -38,6 +38,16 @@
     }
 }
 
+@keyframes highlight {
+    from {
+        border-width: 0;
+    }
+
+    to {
+        border-width: 5px;
+    }
+}
+
 html {
     color: white !important;
 }
@@ -49,8 +59,9 @@ html {
     font-style: normal;
 }
 
-#navbar, #blank {
-    color:white;
+#navbar,
+#blank {
+    color: white;
 }
 
 .josefin-sans,
@@ -198,12 +209,12 @@ html {
     transition: filter 1s 300ms, transform 1s 300ms;
 }
 
-.about.tm-hidden{
+.about.tm-hidden {
     transform: translateY(100%);
     transition: filter 1s, transform 1s;
 }
 
-.about.tm-show{
+.about.tm-show {
     transform: translateY(0);
 }
 
@@ -215,17 +226,30 @@ html {
     transition: filter 2s 1s, transform 1s 2s;
 }
 
-.about-decor.tm-hidden{
-    opacity:0;
+.about-decor.tm-hidden {
+    opacity: 0;
     transition: opacity 1s 1s, filter 1s 1s;
 }
 
-.about-decor.tm-show{
-    opacity:1;
+.about-decor.tm-show {
+    opacity: 1;
 }
 
 .about-decor:nth-child(2) {
     transition: opacity 1s, filter 1s;
+}
+
+.modal-open {
+    size: 100%;
+    filter: brightness(1);
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+}
+
+.modal-open:hover {
+    transform: scale(1.025, 1.025);
+    filter: brightness(0.75);
+    transition: transform 0.15s ease-in-out;
 }
 
 @media(preferes-reduced-motion) {
@@ -236,6 +260,6 @@ html {
 
 @media (min-width: 1024px) {
     .container {
-        max-width: 768px !important; 
+        max-width: 768px !important;
     }
 }

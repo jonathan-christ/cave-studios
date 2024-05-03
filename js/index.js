@@ -59,36 +59,6 @@ function updateDescription() {
     // cont["desc"].innerHTML = data[1]
 }
 
-// document.querySelectorAll('[data-carousel-slide-to]').forEach((button, index) => {
-//     button.addEventListener('click', () => {
-//         updateActiveState(index);
-//         updateDescription();
-//     });
-// });
-
-// document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
-//     let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
-//     let prevIndex = activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
-//     updateActiveState(prevIndex);
-//     updateDescription();
-// });
-
-// document.querySelector('[data-carousel-next]').addEventListener('click', () => {
-//     let activeIndex = Array.from(carouselItems).findIndex(item => item.getAttribute('data-carousel-item') === 'active');
-//     let nextIndex = activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
-//     updateActiveState(nextIndex);
-//     updateDescription();
-// });
-
-// function parallax() {
-//     let body = document.querySelector("#body")
-//     body.addEventListener('scroll', function () {
-//         var scrollPosition = body.scrollTop
-//         let bg = document.querySelector("#bg")
-//         bg.style.transform = 'translateY(' + scrollPosition *0.5 + 'px)';
-//     });
-// }
-
 function navbar() {
     body.addEventListener('scroll', function () {
         let navbar = document.querySelector("#navbar");
@@ -111,7 +81,6 @@ function navbar() {
             let navEl = Array.from(document.querySelector("#links").children)
             let elB = (element.offsetTop + 700 + element.offsetHeight)
             if (body.scrollTop >= element.offsetTop + 700 && body.scrollTop <= elB && !element.classList.contains('bg-gray-800')) {
-                console.log(element + " " + idx)
                 navEl[idx].classList.add('bg-gray-800')
             } else {
                 navEl[idx].classList.remove('bg-gray-800')
@@ -135,6 +104,45 @@ function observe(cname) {
     hiddenElements.forEach(el => { observer.observe(el) })
 }
 
+function modal(){
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (let i = 0; i < openmodal.length; i++) {
+        openmodal[i].addEventListener('click', function(event){
+            event.preventDefault()
+            console.log(i);
+            toggleModal(openmodal[i].getAttribute('src'));
+        })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    document.onkeydown = function(evt) {
+        evt = evt || window.event
+        var isEscape = false
+        if ("key" in evt) {
+            isEscape = (evt.key === "Escape" || evt.key === "Esc")
+        } else {
+            isEscape = (evt.keyCode === 27)
+        }
+        if (isEscape && document.body.classList.contains('modal-active')) {
+            toggleModal()
+        }
+    };
+    
+    function toggleModal (arg = "") {
+        const body = document.querySelector('body')
+        const modal = document.querySelector('.modal')
+        modal.classList.toggle('opacity-0')
+        modal.classList.toggle('pointer-events-none')
+        body.classList.toggle('modal-active')
+    
+        if(arg){
+            document.getElementById('display-image').setAttribute('src', arg);
+        }
+    }
+}
+
 function notAvail() {
     alert("Under Construction!");
 }
@@ -143,9 +151,7 @@ function init() {
     observe('gen-hidden')
     observe('tm-hidden')
 
-    // updateActiveState(0)
-    // updateDescription()
-    // parallax()
+    modal()
     navbar()
 
 }
